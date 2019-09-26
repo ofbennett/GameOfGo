@@ -77,7 +77,7 @@ func iterate_world(world [][]uint8) [][]uint8 {
 	return next_world
 }
 
-func update_cell(i int, j int, world [][]uint8) uint8 {
+func update_cell(i, j int, world [][]uint8) uint8 {
 	current_state := world[i][j]
 	var new_state uint8 = 9 // if a 9 gets through the logic below is broken
 	live_count := live_neighbor_count(i, j, world)
@@ -99,7 +99,7 @@ func update_cell(i int, j int, world [][]uint8) uint8 {
 	return uint8(new_state)
 }
 
-func live_neighbor_count(i int, j int, world [][]uint8) int {
+func live_neighbor_count(i, j int, world [][]uint8) int {
 	var live_count int = 0
 	coords := neighbor_coordinates(i, j, world)
 	for _, coord_pair := range coords {
@@ -110,7 +110,7 @@ func live_neighbor_count(i int, j int, world [][]uint8) int {
 	return live_count
 }
 
-func neighbor_coordinates(i int, j int, world [][]uint8) [][2]int {
+func neighbor_coordinates(i, j int, world [][]uint8) [][2]int {
 	coords := make([][2]int, 0, 8) // len 0 cap 8
 	size := len(world)
 	for n := i - 1; n < i+2; n++ {
@@ -128,7 +128,7 @@ func neighbor_coordinates(i int, j int, world [][]uint8) [][2]int {
 	return coords
 }
 
-func run(iter_num int, size int, parallel_comp bool, print_world bool) {
+func run(iter_num, size int, parallel_comp, print_world bool) {
 	rand.Seed(time.Now().UTC().UnixNano())
 	world := init_world(size)
 	for i := 0; i < iter_num; i++ {
