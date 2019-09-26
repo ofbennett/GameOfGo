@@ -2,7 +2,7 @@
 
 By Oscar Bennett
 
-This project is a [Go](https://golang.org) implementation of Conway's Game of Life. This is a program that simulates a world which produces interesting animations dependant on the initial conditions and world rules you choose. The program can print the evolving world state to screen:
+This project is a [Go](https://golang.org) implementation of Conway's Game of Life. This program simulates a world which produces interesting animations dependant on the initial conditions and world rules you choose. The program can print the evolving world state to screen:
 
 <p align="center"><img src="./example_world.png" width="400"></p>
 
