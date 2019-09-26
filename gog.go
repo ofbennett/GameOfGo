@@ -12,7 +12,7 @@ import (
 const (
 	GREEN = "\033[0;32m"
 	RESET = "\x1b[0m"
-	GREY = "\033[0;37m"
+	GREY  = "\033[0;37m"
 )
 
 func clear_terminal() {
@@ -29,11 +29,11 @@ func timeTrack(start time.Time, name string) {
 func display(world [][]uint8) {
 	clear_terminal()
 	for _, world_slice := range world {
-		for _, cell := range world_slice{
-			if cell == 1{
-				fmt.Printf(" %v%v%v",GREEN, cell, RESET)
-			}else{
-				fmt.Printf(" %v%v%v",GREY, cell, RESET)
+		for _, cell := range world_slice {
+			if cell == 1 {
+				fmt.Printf(" %v%v%v", GREEN, cell, RESET)
+			} else {
+				fmt.Printf(" %v%v%v", GREY, cell, RESET)
 			}
 		}
 		fmt.Printf("\n")
