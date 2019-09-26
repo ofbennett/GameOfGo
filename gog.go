@@ -9,6 +9,12 @@ import (
 	"time"
 )
 
+const (
+	GREEN = "\033[0;32m"
+	RESET = "\x1b[0m"
+	GREY = "\033[0;37m"
+)
+
 func clear_terminal() {
 	cmd := exec.Command("clear")
 	cmd.Stdout = os.Stdout
@@ -23,7 +29,14 @@ func timeTrack(start time.Time, name string) {
 func display(world [][]uint8) {
 	clear_terminal()
 	for _, world_slice := range world {
-		fmt.Printf("%v\n", world_slice)
+		for _, cell := range world_slice{
+			if cell == 1{
+				fmt.Printf(" %v%v%v",GREEN, cell, RESET)
+			}else{
+				fmt.Printf(" %v%v%v",GREY, cell, RESET)
+			}
+		}
+		fmt.Printf("\n")
 	}
 }
 
