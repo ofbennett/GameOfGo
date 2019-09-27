@@ -12,7 +12,7 @@ The program has various parameters which control how it runs (found in the main(
 ```go
 
 iter_num := 10 // number of world iterations to run for
-size := 30 // size of the world (eg this would produce 30x30 square)
+size := 30 // size of the world (eg this would produce a 30x30 square)
 parallel_comp := false // Whether to run the parallel version of the Go code
 print_world := true // Whether to print the evolving world to screen (size must be =< 50 to print)
 
